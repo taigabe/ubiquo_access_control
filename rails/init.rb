@@ -2,10 +2,10 @@ require 'ubiquo_access_control'
 
 Ubiquo::Plugin.register(:ubiquo_access_control, directory, config) do |config|
   
-  config.add :role_access_control, lambda{
+  config.add :role_access_control, lambda{ |_|
     access_control :DEFAULT => "role_management"
   }
-  config.add :role_permit, lambda{
+  config.add :role_permit, lambda{ |_|
     permit?("role_management")
   }
   
